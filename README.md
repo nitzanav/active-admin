@@ -31,7 +31,7 @@ Collections names are accounts and collection.
 2. Manage connection data object:
 
 * Notes
-* {{connection_data}} is an array nested inside each account document
+* `connection_data` is an array nested inside each account document
 * Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
 * Thus, the URL should be: /admin/account/:id/connections/:id
 * connection data and be blocked for view for developers.
