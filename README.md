@@ -30,19 +30,19 @@ Collections names are accounts and collection.
 
 2. Manage connection data object:
 
-2.1. Notes
-2.1.1. Connections is an array nested inside each account document
-2.1.2. Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
-2.1.3. Thus, the URL should be: /admin/account/:id/connections/:id
-2.1.4. connection data and be blocked for view for developers.
+* Notes
+* Connections is an array nested inside each account document
+* Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
+* Thus, the URL should be: /admin/account/:id/connections/:id
+* connection data and be blocked for view for developers.
 
 
 3. Authorization with CanCanCanAbilityAdapter:
 
-3.1. Developers Role - can manage
-3.2. QA Role - can read
-3.3. Support Role - can read 
-3.4. Limit change permissions to specific fields see below
+* Developers Role - can manage
+* QA Role - can read
+* Support Role - can read 
+* Limit change permissions to specific fields see below
 
 
 ### Important support only one field update
