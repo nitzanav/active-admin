@@ -12,21 +12,21 @@ Collections names are accounts and collection.
 
 1. Create an app for activeadmin to manage MongoDB collections
 
-1.1.Authenticated ActiveAdmin
-1.2.Rails highest stable version
-1.3.yaml config per environment for example - https://github.com/railsconfig/config
-1.4. Devise gem
-1.5. sqlite DB for user and role models for devise or else, file per each env
-1.6. Mongoid gem
-1.7. manage account collection
-1.8. add data according to the collection attached
-1.9. url slug: suitable for the path 'maindn/main/account'
-1.10. index page - columns: _id, name
+* Authenticated ActiveAdmin
+* Rails highest stable version
+* yaml config per environment for example - https://github.com/railsconfig/config
+* Devise gem
+* sqlite DB for user and role models for devise or else, file per each env
+* Mongoid gem
+* manage account collection
+* add data according to the collection attached
+* url slug: suitable for the path 'maindn/main/account'
+* index page - columns: _id, name
     show page - all
     edit page - all
     no create!
-1.11. pagination
-1.12. Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
+* pagination
+* Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
 2. Manage connection data object:
 
