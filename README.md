@@ -25,7 +25,7 @@ The test-case should be reported also when uploading it)
 2. Create an app for activeadmin to manage MongoDB collections
     * Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
     * manage account collection
-    * url slug: suitable for the path 'maindn/main/account'
+    * url slug: `/admin/account/:id'
     * index page - columns: _id, name
         show page - all
         edit page - all
@@ -50,7 +50,7 @@ The test-case should be reported also when uploading it)
     * Limit change permissions to specific fields see below
     * field as : user,password,token should be not vieable for roles support/qa.
  
-5. Create debug log - every update query to mongo should be sent by email from local mail server - by
+5. audit email - every update query to mongo should be sent by email from local mail server - by
 the format : 
 
 ```
@@ -59,7 +59,7 @@ Has modified collection : _____
 ```
 attached to the email - old document and new document.(json file)
 
-### Important!! support only one field update
+### Important!! support updating only changed fields
 
 the default behivor of active-admin is to send all form fields when submitting a chage.
 changing one field should send only the modified fields ( see below implementation example ) , 
@@ -198,23 +198,6 @@ $(document).ready(function() {
     "_id" : NumberLong(10),
     "account_id" : null,
     "allowed_url_encode" : NumberLong(1),
-    "class_name" : "Api_Dyn",
-    "code" : "",
-    "created" : NumberLong(1320000076),
-    "default_email_field" : "email",
-    "default_settings" : {
-        "external_datasync" : NumberLong(1),
-        "domain_breakdown" : NumberLong(1),
-        "url_rest" : "http://emailapi.dynect.net/rest/",
-        "url_rest_read" : "http://emailapi-readonly.dynect.net/rest/",
-        "use_internal_unsubscribe" : NumberLong(1),
-        "use_smtp_for_sends" : NumberLong(1),
-        "host_smtp" : "smtp.dynect.net",
-        "host_smtp_port" : NumberLong(587)
-    },
-    "deleted" : null,
-    "link_token_close" : "}}",
-    "link_token_open" : "{{",
     "name" : "Dyn",
     "network_id" : NumberLong(3),
     "possible_email_encrypt" : NumberLong(1),
@@ -224,16 +207,8 @@ $(document).ready(function() {
     "token_open" : "{{",
     "tracking_close" : "",
     "tracking_open" : "",
-    "updated" : NumberLong(1320000076),
-    "use_worker" : false,
-    "xlink_token_open" : "{{"
+    "updated" : NumberLong(1320000076)
 }
-
-
-
-
-
-
 
 ```
 
