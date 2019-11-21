@@ -1,7 +1,6 @@
-# Title
-ActiveAdmin for MongoDB
+# ActiveAdmin for MongoDB
 
-#### Minimal Requirement
+### Minimal Requirement
 Rails, gems: ActiveAdmin, Device, CanCanCan, docker, Mongoid
 
 ### General Task
