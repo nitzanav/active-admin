@@ -37,7 +37,7 @@ The test-case should be reported also when uploading it)
     * `connection_data` is an array nested inside each account document
     * Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
     * Thus, the URL should be: `/admin/account/:id/connections/:id`
-    * in the account account show page, add a pannel at the bottom with the list of connections (esp_id), esp_name (taken from `ESP.find(esp_id).name`), when clicking on connection, it goes to the show page `/admin/account/:id/connections/:id`
+    * in the account account show page, add a pannel at the bottom with the list of connections (esp_id), esp_name (taken from `ESP.find(_id: ).name`) you can see esp collection below, when clicking on connection, it goes to the show page `/admin/account/:id/connections/:id`
     * show page should show all fields, with link to edit page
     * edit page should enable edit of all fields of connections
  
