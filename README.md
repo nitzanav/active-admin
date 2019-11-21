@@ -10,10 +10,10 @@ Collections names are accounts and collection.
 
 ### Milestones:
 
-each milestone should be uploaded as pull request to this git.
-and tested . ( the test-case should be reported also when uploading it)
+Each milestone should be uploaded as pull request to this git - and tested.
+The test-case should be reported also when uploading it)
 
-1. create skeleton for active-admin with authentication under docker environment.
+1. Create skeleton for active-admin with authentication under docker environment.
 
 2. Create an app for activeadmin to manage MongoDB collections
 
