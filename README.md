@@ -7,7 +7,7 @@ Rails, gems: ActiveAdmin, Device, CanCanCan, docker , active admin mongoid
 
 ### General Task
 create active admin docker instance including CanCanCan and
-and according to the connection collection.
+and according to the account collection .(see below)
 
 ### Milestones:
 
