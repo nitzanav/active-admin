@@ -12,37 +12,37 @@ Collections names are accounts and collection.
 
 1. Create an app for activeadmin to manage MongoDB collections
 
-* Authenticated ActiveAdmin
-* Rails highest stable version
-* yaml config per environment for example - https://github.com/railsconfig/config
-* Devise gem
-* sqlite DB for user and role models for devise or else, file per each env
-* Mongoid gem
-* manage account collection
-* add data according to the collection attached
-* url slug: suitable for the path 'maindn/main/account'
-* index page - columns: _id, name
-    show page - all
-    edit page - all
-    no create!
-* pagination
-* Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
+    * Authenticated ActiveAdmin
+    * Rails highest stable version
+    * yaml config per environment for example - https://github.com/railsconfig/config
+    * Devise gem
+    * sqlite DB for user and role models for devise or else, file per each env
+    * Mongoid gem
+    * manage account collection
+    * add data according to the collection attached
+    * url slug: suitable for the path 'maindn/main/account'
+    * index page - columns: _id, name
+        show page - all
+        edit page - all
+        no create!
+    * pagination
+    * Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
 2. Manage connection data object:
 
-* Notes
-* `connection_data` is an array nested inside each account document
-* Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
-* Thus, the URL should be: /admin/account/:id/connections/:id
-* connection data and be blocked for view for developers.
+    * Notes
+    * `connection_data` is an array nested inside each account document
+    * Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
+    * Thus, the URL should be: /admin/account/:id/connections/:id
+    * connection data and be blocked for view for developers.
 
 
 3. Authorization with CanCanCanAbilityAdapter:
 
-* Developers Role - can manage
-* QA Role - can read
-* Support Role - can read 
-* Limit change permissions to specific fields see below
+    * Developers Role - can manage
+    * QA Role - can read
+    * Support Role - can read 
+    * Limit change permissions to specific fields see below
 
 
 ### Important support only one field update
