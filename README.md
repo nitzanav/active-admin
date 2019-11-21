@@ -1,17 +1,17 @@
-# Specs for active admin project
-
-create a connection maindb with DB main and collection connection
+# Title
+ActiveAdmin for MongoDB
 
 #### Minimal Requirement
-Rails, gems: ActiveAdmin, Device, CanCanCan, docker , active admin mongoid
+Rails, gems: ActiveAdmin, Device, CanCanCan, docker, Mongoid
 
 ### General Task
-create active admin docker instance including CanCanCan and
-and according to the account collection .(see below)
+Create an app for activeadmin to manage MongoDB collections
+Athorization and authentication using Devise and CanCanCan gems.
+Collections names are accounts and collection.
 
 ### Milestones:
 
-1. create simple account with editing possibility
+1. Create an app for activeadmin to manage MongoDB collections
 
 1.1 Authenticated ActiveAdmin
 1.2 Rails highest stable version
@@ -21,30 +21,36 @@ and according to the account collection .(see below)
 1.6 Mongoid gem
 1.7 manage account collection
 1.8 add data according to the collection attached
-1.9 url slug: 'admin/account'
-1.9.1 index page: - columns: _id, name
-   show - all
-    edit - all
+1.9 url slug: suitable for the path 'maindn/main/account'
+1.10 index page - columns: _id, name
+    show page - all
+    edit page - all
     no create!
-1.92 enable pagination 
-1.93 connection data object in seperate page - unvieble for support group
+1.11 pagination
+1.12 Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
-2. Authorization with CanCanCanAbilityAdapter :
-   Support role - only read
-  Developers role - can manage 
+2. Manage connection data object:
 
-3. Limit changes permissions to specific fields - see below.
-4. enable Log
-
-
-### Filters
-1. by name
-2. contains
-3. id
+2.1. Notes
+2.1.1. Connections is an array nested inside each account document
+2.1.2. Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
+2.1.3. Thus, the URL should be: /admin/account/:id/connections/:id
+2.1.4. connection data and be blocked for view for developers.
 
 
-### Important!!! -  support only one field modification
+3. Authorization with CanCanCanAbilityAdapter:
 
+3.1. Developers Role - can manage
+3.2. QA Role - can read
+3.3. Support Role - can read 
+3.4. Limit change permissions to specific fields see below
+
+
+### Important support only one field update
+
+the default behivor of active-admin is to send all form fields when submitting a chage.
+changing one field should send only the modified fields ( see below ) , 
+and the server should suppor it.
 
 ```javascript
 
@@ -65,7 +71,7 @@ $(document).ready(function() {
 ```
 
 
-### Collection fields and types:
+#### Collection fields and types:
 
 ```json
 {
