@@ -10,7 +10,12 @@ Collections names are accounts and collection.
 
 ### Milestones:
 
-1. Create an app for activeadmin to manage MongoDB collections
+each milestone should be uploaded as pull request to this git.
+and tested . ( the test-case should be reported also when uploading it)
+
+1. create skeleton for active-admin with authentication under docker environment.
+
+2. Create an app for activeadmin to manage MongoDB collections
 
     * Authenticated ActiveAdmin
     * Rails highest stable version
@@ -28,22 +33,31 @@ Collections names are accounts and collection.
     * pagination
     * Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
-2. Manage connection data object:
+3. Manage connection data object:
 
     * Notes
     * `connection_data` is an array nested inside each account document
     * Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
     * Thus, the URL should be: /admin/account/:id/connections/:id
     * connection data and be blocked for view for developers.
+    
 
-
-3. Authorization with CanCanCanAbilityAdapter:
+4. Authorization with CanCanCanAbilityAdapter:
 
     * Developers Role - can manage
     * QA Role - can read
     * Support Role - can read 
     * Limit change permissions to specific fields see below
+ 
+5. create debug log - every update query to mongo should be sent by email from local mail server - by
+the format : 
 
+```
+User : ____
+Has modified collection : _____
+attached to the email - old document and new document.(json file)
+
+```
 
 ### Important!! support only one field update
 
