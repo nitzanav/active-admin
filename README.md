@@ -14,33 +14,33 @@ Each milestone should be uploaded as pull request to this git - and tested.
 The test-case should be reported also when uploading it)
 
 1. Create skeleton for active-admin with authentication under docker environment.
-
-2. Create an app for activeadmin to manage MongoDB collections
-
     * Authenticated ActiveAdmin
     * Rails highest stable version
     * yaml config per environment for example - https://github.com/railsconfig/config
     * Devise gem
     * sqlite DB for user and role models for devise or else, file per each env
     * Mongoid gem
+    * enable mongoid to log each query to mongo.
+
+2. Create an app for activeadmin to manage MongoDB collections
+    * Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
     * manage account collection
-    * add data according to the collection attached
     * url slug: suitable for the path 'maindn/main/account'
     * index page - columns: _id, name
         show page - all
         edit page - all
         no create!
     * pagination
-    * Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
+
 
 3. Manage connection data object:
-
-    * Notes
     * `connection_data` is an array nested inside each account document
     * Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
-    * Thus, the URL should be: /admin/account/:id/connections/:id
-    * connection data and be blocked for view for developers.
-    
+    * Thus, the URL should be: `/admin/account/:id/connections/:id`
+    * in the account account show page, add a pannel at the bottom with the list of connections (esp_id), esp_name (taken from `ESP.find(esp_id).name`), when clicking on connection, it goes to the show page `/admin/account/:id/connections/:id`
+    * show page should show all fields, with link to edit page
+    * edit page should enable edit of all fields of connections
+ 
 
 4. Authorization with CanCanCanAbilityAdapter:
 
@@ -48,6 +48,7 @@ The test-case should be reported also when uploading it)
     * QA Role - can read
     * Support Role - can read 
     * Limit change permissions to specific fields see below
+    * field as : user,password,token should be not vieable for roles support/qa.
  
 5. Create debug log - every update query to mongo should be sent by email from local mail server - by
 the format : 
