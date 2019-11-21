@@ -39,9 +39,8 @@ and according to the account collection .(see below)
 3. id
 
 
-### Important support only one field pagination
+### Important!!! -  support only one field modification
 
-please see code 
 
 ```javascript
 
