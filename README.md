@@ -55,9 +55,8 @@ the format :
 ```
 User : ____
 Has modified collection : _____
-attached to the email - old document and new document.(json file)
-
 ```
+attached to the email - old document and new document.(json file)
 
 ### Important!! support only one field update
 
