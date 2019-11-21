@@ -61,7 +61,7 @@ $(document).ready(function() {
 ```
 
 
-#### Collection field and types:
+### Collection field and types:
 
 ```json
 {
