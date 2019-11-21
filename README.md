@@ -29,27 +29,28 @@ Collections names are accounts and collection.
 1.11 pagination
 1.12 Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
-2. Manage connections management
+2. Manage connection data object:
 
 2.1. Notes
 2.1.1. Connections is an array nested inside each account document
-2.1.2. Note that there is no way to find a connection by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
+2.1.2. Note that there is no way to find a connection data by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
 2.1.3. Thus, the URL should be: /admin/account/:id/connections/:id
-2.1.4. 
+2.1.4. connection data and be blocked for view for developers.
 
-3. Authorization with CanCanCanAbilityAdapter
+
+3. Authorization with CanCanCanAbilityAdapter:
 
 3.1. Developers Role - can manage
 3.2. QA Role - can read
 3.3. Support Role - can read 
-
-3. Limit changes permissions to specific fields :
-
+3.4. Limit change permissions to specific fields see below
 
 
-### Important support only one field pagination
+### Important support only one field update
 
-please see code 
+the default behivor of active-admin is to send all form fields when submitting a chage.
+changing one field should send only the modified fields ( see below ) , 
+and the server should suppor it.
 
 ```javascript
 
@@ -70,7 +71,7 @@ $(document).ready(function() {
 ```
 
 
-#### Collection field and types:
+#### Collection fields and types:
 
 ```json
 {
