@@ -45,11 +45,11 @@ Collections names are accounts and collection.
     * Limit change permissions to specific fields see below
 
 
-### Important support only one field update
+### Important!! support only one field update
 
 the default behivor of active-admin is to send all form fields when submitting a chage.
 changing one field should send only the modified fields ( see below implementation example ) , 
-and the server should support it.
+and active admin should support it ( use `$set` when updating ) should support it.
 
 ```javascript
 
