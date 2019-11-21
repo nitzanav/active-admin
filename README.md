@@ -49,7 +49,7 @@ The test-case should be reported also when uploading it)
     * Support Role - can read 
     * Limit change permissions to specific fields see below
  
-5. create debug log - every update query to mongo should be sent by email from local mail server - by
+5. Create debug log - every update query to mongo should be sent by email from local mail server - by
 the format : 
 
 ```
