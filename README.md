@@ -13,7 +13,7 @@ Collections names are accounts and collection.
 1. Create an app for activeadmin to manage MongoDB collections
 
 1.1 Authenticated ActiveAdmin
-1.2. Rails highest stable version
+1.2 Rails highest stable version
 1.3. yaml config per environment for example - https://github.com/railsconfig/config
 1.4. Devise gem
 1.5. sqlite DB for user and role models for devise or else, file per each env
