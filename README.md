@@ -84,7 +84,7 @@ $(document).ready(function() {
 ```
 
 
-### Collection fields and types:
+### Collection fields and types (`account`):
 
 ```json
 {
@@ -192,5 +192,48 @@ $(document).ready(function() {
     "customer_contacts_activity_webhook_url" : ""
 }
 ```
+### esp collection 
+```
+{
+    "_id" : NumberLong(10),
+    "account_id" : null,
+    "allowed_url_encode" : NumberLong(1),
+    "class_name" : "Api_Dyn",
+    "code" : "",
+    "created" : NumberLong(1320000076),
+    "default_email_field" : "email",
+    "default_settings" : {
+        "external_datasync" : NumberLong(1),
+        "domain_breakdown" : NumberLong(1),
+        "url_rest" : "http://emailapi.dynect.net/rest/",
+        "url_rest_read" : "http://emailapi-readonly.dynect.net/rest/",
+        "use_internal_unsubscribe" : NumberLong(1),
+        "use_smtp_for_sends" : NumberLong(1),
+        "host_smtp" : "smtp.dynect.net",
+        "host_smtp_port" : NumberLong(587)
+    },
+    "deleted" : null,
+    "link_token_close" : "}}",
+    "link_token_open" : "{{",
+    "name" : "Dyn",
+    "network_id" : NumberLong(3),
+    "possible_email_encrypt" : NumberLong(1),
+    "raw_delivery" : NumberLong(1),
+    "status" : NumberLong(1),
+    "token_close" : "}}",
+    "token_open" : "{{",
+    "tracking_close" : "",
+    "tracking_open" : "",
+    "updated" : NumberLong(1320000076),
+    "use_worker" : false,
+    "xlink_token_open" : "{{"
+}
 
+
+
+
+
+
+
+```
 
