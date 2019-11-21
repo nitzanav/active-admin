@@ -30,7 +30,7 @@ and according to the account collection .(see below)
 
 2. Authorization with CanCanCanAbilityAdapter :
 
-3. Limit changes permissions to specific fields :
+3. Limit changes permissions to specific fields - see below.
 
 
 ### Filters
