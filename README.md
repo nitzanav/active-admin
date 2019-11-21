@@ -1,17 +1,17 @@
-# Specs for active admin project
-
-create a connection maindb with DB main and collection connection
+# Title
+ActiveAdmin for MongoDB
 
 #### Minimal Requirement
-Rails, gems: ActiveAdmin, Device, CanCanCan, docker , active admin mongoid
+Rails, gems: ActiveAdmin, Device, CanCanCan, docker, Mongoid
 
 ### General Task
-create active admin docker instance including CanCanCan and
-and according to the account collection .(see below)
+Create an app for activeadmin to manage MongoDB collections
+Athorization and authentication using Devise and CanCanCan gems.
+Collections names are accounts and collection.
 
 ### Milestones:
 
-1. create simple account with editing possibility
+1. Create an app for activeadmin to manage MongoDB collections
 
 1.1 Authenticated ActiveAdmin
 1.2 Rails highest stable version
@@ -22,25 +22,34 @@ and according to the account collection .(see below)
 1.7 manage account collection
 1.8 add data according to the collection attached
 1.9 url slug: suitable for the path 'maindn/main/account'
-1.91 indexing - columns: _id, name
-    show - all
-    edit - all
+1.10 index page - columns: _id, name
+    show page - all
+    edit page - all
     no create!
-1.92 enable pagination    
+1.11 pagination
+1.12 Filter - Fields: _id, name (I think that contians is enabled by default, anyway it is required for name field) 
 
-2. Authorization with CanCanCanAbilityAdapter :
+2. Manage connections management
 
-3. Limit changes permissions to specific fields - see below.
+2.1. Notes
+2.1.1. Connections is an array nested inside each account document
+2.1.2. Note that there is no way to find a connection by connection_id, need to find it by fetching account. acctually `Account.find(account_id).connections_data[connection_id]`
+2.1.3. Thus, the URL should be: /admin/account/:id/connections/:id
+2.1.4. 
+
+3. Authorization with CanCanCanAbilityAdapter
+
+3.1. Developers Role - can manage
+3.2. QA Role - can read
+3.3. Support Role - can read 
+
+3. Limit changes permissions to specific fields :
 
 
-### Filters
-1. by name
-2. contains
-3. id
 
+### Important support only one field pagination
 
-### Important!!! -  support only one field modification
-
+please see code 
 
 ```javascript
 
@@ -61,7 +70,7 @@ $(document).ready(function() {
 ```
 
 
-### Collection field and types:
+#### Collection field and types:
 
 ```json
 {
