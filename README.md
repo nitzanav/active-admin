@@ -26,16 +26,40 @@ and according to the connection collection.
     show - all
     edit - all
     no create!
+1.92 enable pagination    
 
 2. Authorization with CanCanCanAbilityAdapter :
-
-2.1
 
 3. Limit changes permissions to specific fields :
 
 
 ### Filters
-1. search b
+1. by name
+2. contains
+3. id
+
+
+### Important support only one field pagination
+
+please see code 
+
+```javascript
+
+$(document).ready(function() {
+  $('input, select, textarea').on('change', function() {
+    $(this).addClass('changed');
+  });
+  
+  $('form').on('submit', function() {
+    $('input:not(.changed), textarea:not(.changed)').prop('disabled', true);
+    
+    // alert and return just for showing
+    alert($(this).serialize().replace('%5B', '[').replace('%5D', ']'));
+    return false;
+  });
+});
+
+```
 
 
 #### Collection field and types:
