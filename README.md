@@ -21,16 +21,20 @@ and according to the account collection .(see below)
 1.6 Mongoid gem
 1.7 manage account collection
 1.8 add data according to the collection attached
-1.9 url slug: suitable for the path 'maindn/main/account'
-1.91 indexing - columns: _id, name
-    show - all
+1.9 url slug: 'admin/account'
+1.9.1 index page: - columns: _id, name
+   show - all
     edit - all
     no create!
-1.92 enable pagination    
+1.92 enable pagination 
+1.93 connection data object in seperate page - unvieble for support group
 
 2. Authorization with CanCanCanAbilityAdapter :
+   Support role - only read
+  Developers role - can manage 
 
 3. Limit changes permissions to specific fields - see below.
+4. enable Log
 
 
 ### Filters
@@ -61,7 +65,7 @@ $(document).ready(function() {
 ```
 
 
-### Collection field and types:
+### Collection fields and types:
 
 ```json
 {
