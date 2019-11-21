@@ -48,8 +48,8 @@ Collections names are accounts and collection.
 ### Important support only one field update
 
 the default behivor of active-admin is to send all form fields when submitting a chage.
-changing one field should send only the modified fields ( see below ) , 
-and the server should suppor it.
+changing one field should send only the modified fields ( see below implementation example ) , 
+and the server should support it.
 
 ```javascript
 
